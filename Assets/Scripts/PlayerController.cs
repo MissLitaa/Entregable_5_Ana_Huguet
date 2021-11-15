@@ -24,16 +24,7 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
 
         verticalInput = Input.GetAxis("Vertical");
-
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            transform.Rotate(Vector3.forward, turnSpeed * Time.deltaTime * verticalInput);
-        }
-
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            transform.Rotate(Vector3.forward, turnSpeed * Time.deltaTime * -verticalInput);
-        }
+        transform.Rotate(Vector3.forward, turnSpeed * Time.deltaTime * verticalInput);
 
         if (transform.position.z >= zMax)
         {
