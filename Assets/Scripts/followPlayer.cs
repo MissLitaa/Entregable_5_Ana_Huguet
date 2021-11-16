@@ -10,20 +10,9 @@ public class followPlayer : MonoBehaviour
     private Vector3 offset = new Vector3(20, 0, 10);
  
 
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void LateUpdate()
     {
+        //Rotación y posición de la cámara
         transform.rotation = Quaternion.Euler(cameraRotation);
         transform.position = player.transform.position + offset;
     }

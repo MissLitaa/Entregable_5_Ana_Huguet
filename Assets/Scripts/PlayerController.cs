@@ -9,23 +9,23 @@ public class PlayerController : MonoBehaviour
     public float verticalInput;
     private float zMax = 450.0f;
 
-    // Start is called before the first frame update
     void Start()
     {
         //Posición 0,0,0.
         transform.position = Vector3.zero;
-
-       
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Ir hacia delante todo el tiempo.
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
 
+        //Controlador.
         verticalInput = Input.GetAxis("Vertical");
-        transform.Rotate(Vector3.forward, turnSpeed * Time.deltaTime * verticalInput);
+        transform.Rotate(Vector3.left, turnSpeed * Time.deltaTime * verticalInput);
 
+        //Límite Player.
         if (transform.position.z >= zMax)
         {
             Debug.Log("THE END");
