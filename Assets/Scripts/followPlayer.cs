@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class followPlayer : MonoBehaviour
 {
+   
+    public GameObject player;
+    private Vector3 cameraRotation = new Vector3(0, 270, 0);
+    private Vector3 offset = new Vector3(20, 0, 10);
+ 
+
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void LateUpdate()
+    {
+        transform.rotation = Quaternion.Euler(cameraRotation);
+        transform.position = player.transform.position + offset;
     }
 }
